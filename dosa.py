@@ -15,18 +15,23 @@ class Dosa:
             
             customers[phone_number] = customer_name
             
+            items_list = data.get('items', [])
+            for item in items_list:
+                item_name = item.get('name')
+                item_price = item.get('price')
+                
             # item_name = data['item'].get('name')
             # item_price = data['item'].get('price')
             
-            # if item_name  not in items:
-            #     items[item_name] = {'price': item_price, 'orders': 1}
+            if item_name  not in items:
+                items[item_name] = {'price': item_price, 'orders': 1}
             
-            # else:
-            #     quantity = items[item_name]['orders'] + 1
-            #     items[item_name]['orders'] = quantity
+            else:
+                quantity = items[item_name]['orders'] + 1
+                items[item_name]['orders'] = quantity
                 
         print("customer:",customers)
-        # print('items',items)
+        print('items',items)
             
             
 if __name__ == "__main__":
