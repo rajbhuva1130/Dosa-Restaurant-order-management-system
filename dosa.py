@@ -2,12 +2,16 @@ import json
 import sys
 
 class Dosa:
+    """This class take json file and seperate customer name and
+       phone number to customers.json file and items name, price
+       and total order to items.json"""
     def __init__(self,filename):
         self.file = filename
         with open(filename, "r") as f:
             self.data = json.load(f)
 
-    def get_cusutomer_data(self): # Get customer data from file
+    def get_customer_data(self):
+        """Get customer name and phone number from file"""
         customers = {} 
         for data in self.data:
             phone_number = data['phone']
@@ -15,7 +19,8 @@ class Dosa:
             customers[phone_number] = customer_name
         return customers
 
-    def get_item_list(self): # Get item list from file
+    def get_item_list(self):
+        """Get Items name, Price, and Total order From file"""
         items = {}
         for data in self.data:
             data_items = data['items']
@@ -30,14 +35,14 @@ class Dosa:
                     items[item_name]['orders'] += 1
         return items
     
-    """dump customer names and their phone numbers in json file"""
-    def dump_customer_list(self): 
-        customer_list = self.get_cusutomer_data()
+    def dump_customer_list(self):
+        """dump customer names and their phone numbers in json file"""
+        customer_list = self.get_customer_data()
         with open("customers.json", "w") as f:
             f.write(json.dumps(customer_list))
-
-    """dump items name, price and total order in json file"""
+            
     def dump_item_list(self):
+        """dump items name, price and total order in json file"""
         item_list = self.get_item_list()
         with  open("items.json", "w") as f:
             f.write(json.dumps(item_list))
