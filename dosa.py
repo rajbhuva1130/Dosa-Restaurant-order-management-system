@@ -7,15 +7,15 @@ class Dosa:
         with open(filename, "r") as f:
             self.data = json.load(f)
 
-    def get_cusutomer_data(self):
-        customers = {}
+    def get_cusutomer_data(self): # Get customer data from file
+        customers = {} 
         for data in self.data:
             phone_number = data['phone']
             customer_name = data['name']
             customers[phone_number] = customer_name
         return customers
 
-    def get_item_list(self):
+    def get_item_list(self): # Get item list from file
         items = {}
         for data in self.data:
             data_items = data['items']
@@ -29,12 +29,14 @@ class Dosa:
                     items[item_name]['price'] = item_price
                     items[item_name]['orders'] += 1
         return items
-
-    def dump_customer_list(self):
+    
+    """dump customer names and their phone numbers in json file"""
+    def dump_customer_list(self): 
         customer_list = self.get_cusutomer_data()
         with open("customers.json", "w") as f:
             f.write(json.dumps(customer_list))
 
+    """dump items name, price and total order in json file"""
     def dump_item_list(self):
         item_list = self.get_item_list()
         with  open("items.json", "w") as f:
