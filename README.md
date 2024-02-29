@@ -16,10 +16,10 @@ change example_orders.json in command with your json file name.
 1.To use the script, run it with the following command (Mac):
 python3 dosa.py example_orders.json
 
-2.TO use in windows, run it with the following command:
+2.To use in windows, run it with the following command:
 py dosa.py example_orders.json
 
-3.if Any of command doesn't work, run it with the following command:
+3.If Any of command doesn't work, run it with the following command:
 python dosa.py example_orders.json
 
 ### Example
