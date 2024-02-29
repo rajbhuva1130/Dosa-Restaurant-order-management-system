@@ -1,5 +1,8 @@
 IS 601-1J2 (web systems Development) Midterm Project
 
+Name:Rajkumar Bhuva
+UCID: rrb9
+
 ### Dosa Restaurant Order Processing System
 
 This project aims to design a better system for processing orders for a Dosa restaurant. It includes a Python script that reads order data from a JSON file, processes it, and generates two JSON files as output:
@@ -8,9 +11,16 @@ This project aims to design a better system for processing orders for a Dosa res
 2. `items.json`: Contains item information with item names as keys and details such as price and number of orders as values.
 
 ### Usage
+change example_orders.json in command with your json file name.
 
-To use the script, run it with the following command:
+1.To use the script, run it with the following command (Mac):
+python3 dosa.py example_orders.json
 
+2.TO use in windows, run it with the following command:
+py dosa.py example_orders.json
+
+3.if Any of command doesn't work, run it with the following command:
+python dosa.py example_orders.json
 
 ### Example
 
